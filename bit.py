@@ -20,3 +20,11 @@ my_bot.upload_photo("/home/chidananda/Downloads/photo.png",caption="life is fair
 #sending a message to user
 
 my_bot.send_message("hey bro i am a bot ","ibe.cn") 
+
+#like and comment
+
+my_bot.like_user("ibe,cn",amount=4)
+
+user_id = my_bot.get_user_id_from_username("ibe.cn")
+media_id=my_bot.get_last_user_medias(user_id)
+my_bot.comment(media_id,"nice pic bro")
