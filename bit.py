@@ -1,5 +1,5 @@
-from instabot import bot
-my_bot=bot()
+from instabot import Bot
+my_bot = Bot()
 
 #login cantain
 
@@ -11,7 +11,6 @@ my_bot.follow_users(["ibe.cn","_its_me_dev.12","abhilash23_abhi"])
 
 #unfollow
 
-my_bot.unfollow_non_nonfollowers()
 
 #uploading img
 
@@ -38,13 +37,13 @@ following_list=my_bot.get_user_following("ibe.cn")
 for count,each_followers in enumerate(followers_list):
     if count>4:
         continue
-    sleep(2)
+
     print(my_bot.get_username_from_user_id(each_followers))
 
 for count1,each_follow in enumerate(following_list):
     if count>4:
         continue
-    sleep(5)
+
 
     print(my_bot.get_username_from_user_id(each_follow))
     my_bot.logout()
