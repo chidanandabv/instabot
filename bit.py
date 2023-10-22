@@ -28,3 +28,24 @@ my_bot.like_user("ibe,cn",amount=4)
 user_id = my_bot.get_user_id_from_username("ibe.cn")
 media_id=my_bot.get_last_user_medias(user_id)
 my_bot.comment(media_id,"nice pic bro")
+
+
+#list of followers
+
+followers_list=my_bot.get_user_followers("ibe.cn")
+following_list=my_bot.get_user_following("ibe.cn")
+
+for count,each_followers in enumerate(followers_list):
+    if count>4:
+        continue
+    sleep(2)
+    print(my_bot.get_username_from_user_id(each_followers))
+
+for count1,each_follow in enumerate(following_list):
+    if count>4:
+        continue
+    sleep(5)
+
+    print(my_bot.get_username_from_user_id(each_follow))
+    my_bot.logout()
+
